@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="powp-rhymers" />
+        <module name="pio" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="powp-rhymers" target="1.8" />
+      <module name="pio" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

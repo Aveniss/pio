@@ -2,49 +2,44 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-    private int[] numbers = new int[12];
+    private static final int MEDIUM_CAPACITY = 11;
 
-    private static final int MAX_SIZE  = 12;
-    private static final int IS_EMPTY = -1;
+    private static final int NEGATIVE_VALUE = -1;
+    private static final int NEGATIVE_VALUE_1 = -1;
+    private static final int CAPACITY = 12;
+    private final int[] NUMBERS = new int[CAPACITY];
 
-    public static int getMaxSize() {
-        return MAX_SIZE;
-    }
+    private int total = NEGATIVE_VALUE_1;
 
-    public static int getIsEmpty() {
-        return IS_EMPTY;
-    }
-
-    public int getTotal() {
+    protected int getTotal() {
         return total;
     }
 
-    private int total = IS_EMPTY;
-
-    public void countIn(int in) {
+    protected void countIn(int in) {
         if (!isFull())
-            numbers[++total] = in;
+            NUMBERS[++total] = in;
+    }
+
+    protected boolean callCheck() {
+        return total == NEGATIVE_VALUE_1;
+    }
+    protected boolean isFull() {
+        return total == MEDIUM_CAPACITY;
+    }
+
+    protected int peekaboo() {
+        if (callCheck())
+                   return NEGATIVE_VALUE;
+        return NUMBERS[total];
     }
 
 
-        public boolean callCheck() {
-            return total == IS_EMPTY;
-        }
-        
-            public boolean isFull() {
-                return total == MAX_SIZE;
-            }
-        
-                protected int peekaBoo() {
-                    if (callCheck())
-                        return IS_EMPTY;
-                    return numbers[total];
-                }
-            
-                    public int countOut() {
-                        if (callCheck())
-                            return IS_EMPTY;
-                        return numbers[total--];
-                    }
+
+    protected int countOut() {
+        if (callCheck())
+            return NEGATIVE_VALUE;
+        return NUMBERS[total--];
+    }
+
 
 }

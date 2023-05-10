@@ -25,5 +25,4 @@ public class DefaultRhymersFactory implements Rhymersfactory {
     public DefaultCountingOutRhymer GetHanoiRhymer() {
         return new HanoiRhymer();
     }
-
 }
