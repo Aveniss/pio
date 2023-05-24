@@ -15,7 +15,7 @@ public class DefaultCountingOutRhymer {
         return total;
     }
 
-    protected void countIn(int in) {
+    public void countIn(int in) {
         if (!isFull())
             NUMBERS[++total] = in;
     }
@@ -27,7 +27,7 @@ public class DefaultCountingOutRhymer {
         return total == MEDIUM_CAPACITY;
     }
 
-    protected int peekaboo() {
+    public int peekaboo() {
         if (callCheck())
                    return NEGATIVE_VALUE;
         return NUMBERS[total];

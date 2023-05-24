@@ -1,28 +1,34 @@
 package edu.kis.vh.nursery;
 
+/**
+ * Klasa HanoiRhymer dziedziczy po klasie DefaultCountingOutRhymer
+ */
 public class HanoiRhymer extends DefaultCountingOutRhymer {
 
-    private static final int INT_1 = 0;
-    private int totalRejected = INT_1;
+    /**
+     * Stała INT_1
+     */
+    public static final int INT_1 = 0;
+    /**
+     * Zmienna przechwująca ilość odrzucań
+     */
+    int totalRejected = INT_1;
 
-    protected int reportRejected() {
+    /**
+     * @return zwraca ilość odrzuceń
+     */
+    public int reportRejected() {
         return totalRejected;
     }
 
+    /**
+     * @param in - zmienna typu int która jest odkładana przez funkcję countIn na stos
+     */
     @Override
-    protected void countIn(int in) {
+    public void countIn(int in) {
         if (!callCheck() && in > peekaboo())
             totalRejected++;
         else
             super.countIn(in);
-    }
-
-    public int getTotalRejected() {
-        return totalRejected;
-    }
-
-
-    public void setTotalRejected(int totalRejected) {
-        this.totalRejected = totalRejected;
     }
 }
